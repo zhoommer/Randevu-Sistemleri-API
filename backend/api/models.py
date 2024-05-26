@@ -1,20 +1,40 @@
+import random
+import string
 from django.db import models
+
 
 # Create your models here.
 
 PERSONEL_CHOISES = {
-        "EM": "EMRAH",
-        "LM": "LOKMAN"
+        "EMRAH": "EMRAH",
+        "LOKMAN": "LOKMAN"
         }
 
 
+
+
+class Personeller(models.Model):
+    name = models.CharField(max_length=50)
+    surname = models.CharField(max_length=50)
+    phone = models.CharField(max_length=10)
+    status = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Personeller"
+        verbose_name_plural = "Personeller"
+
+    def __str__(self):
+        return f"{self.name} - {self.surname}"
+
+
+
 class Randevular(models.Model):
-    tarih = models.DateField()
+    personel = models.ForeignKey(Personeller, on_delete=models.CASCADE) 
+    date = models.DateField()
     name_surname = models.CharField(max_length=50)
     phone = models.CharField(max_length=10)
-    personel = models.CharField(choices=PERSONEL_CHOISES, max_length=2)
-    saat = models.CharField(max_length=10)
-    note = models.TextField()
+    hour = models.CharField(max_length=10)
+    note = models.TextField(blank=True, null=True)
     onay_durumu = models.BooleanField(default=False)
 
 
@@ -26,4 +46,5 @@ class Randevular(models.Model):
     def __str__(self):
         return f"{self.name_surname}"
 
+    
 
