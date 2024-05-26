@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     'corsheaders',
+    'rangefilter',
 
     'rest_framework',
     'api.apps.ApiConfig',
