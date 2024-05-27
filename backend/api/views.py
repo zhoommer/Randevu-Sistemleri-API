@@ -11,6 +11,11 @@ class PersonelListCreateViews(generics.ListCreateAPIView):
     queryset = Personeller.objects.all()
     serializer_class = PersonellerSerializer
 
+
+class RandevularDestroyAPIView(generics.DestroyAPIView):
+    queryset = Randevular.objects.all()
+    serializer_class = RandevularSerializer
+
 class RandevularListCreateViews(generics.ListCreateAPIView):
     queryset = Randevular.objects.all()
     serializer_class = RandevularSerializer
@@ -21,5 +26,4 @@ class RandevularListCreateViews(generics.ListCreateAPIView):
         if phone is not None:
             queryset = queryset.filter(phone=phone)
         return queryset
-    
 
