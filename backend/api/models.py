@@ -47,6 +47,22 @@ class Randevular(models.Model):
     def __str__(self):
         return f"{self.name_surname}"
 
+
+
+class Ucretler(models.Model):
+    title = models.CharField(max_length=50)
+    imageUrl = models.CharField(max_length=250)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    animation = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Ucretler"
+        verbose_name_plural = "Ucretler"
+
+
+    def __str__(self):
+        return f"{self.title}"
+
     
 
     

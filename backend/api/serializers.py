@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Randevular, Personeller
+from .models import Randevular, Personeller, Ucretler 
 
 
 
@@ -14,3 +14,8 @@ class RandevularSerializer(serializers.ModelSerializer):
         model = Randevular
         fields = '__all__'
 
+
+class UcretlerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ucretler
+        fields = '__all__'

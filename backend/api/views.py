@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Randevular, Personeller
-from .serializers import RandevularSerializer, PersonellerSerializer
+from .models import Randevular, Personeller, Ucretler 
+from .serializers import RandevularSerializer, PersonellerSerializer, UcretlerSerializer 
 
 # Create your views here.
 
@@ -27,3 +27,7 @@ class RandevularListCreateViews(generics.ListCreateAPIView):
             queryset = queryset.filter(phone=phone)
         return queryset
 
+
+class UcretlerListApiView(generics.ListAPIView):
+    queryset = Ucretler.objects.all()
+    serializer_class = UcretlerSerializer

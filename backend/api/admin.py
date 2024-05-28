@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Randevular, Personeller
+from .models import Randevular, Personeller, Ucretler 
 from django.contrib.admin import DateFieldListFilter
 from rangefilter.filters import DateRangeFilter
 
@@ -24,3 +24,4 @@ class RandevularAdmin(admin.ModelAdmin):
 
 admin.site.register(Personeller)
 admin.site.register(Randevular, RandevularAdmin)
+admin.site.register(Ucretler)
