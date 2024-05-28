@@ -34,6 +34,7 @@ class Randevular(models.Model):
     name_surname = models.CharField(max_length=50)
     phone = models.CharField(max_length=10)
     hour = models.CharField(max_length=10)
+    islem = models.JSONField(default=list)
     note = models.TextField(blank=True, null=True)
     onay_durumu = models.BooleanField(default=False)
 
@@ -45,6 +46,8 @@ class Randevular(models.Model):
 
     def __str__(self):
         return f"{self.name_surname}"
+
+    
 
     
 

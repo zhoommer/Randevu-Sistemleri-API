@@ -16,7 +16,7 @@ def onay_durumu_degistir(modeladmin, request, queryset):
 onay_durumu_degistir.short_description = "Randevulari Onayla"
 
 class RandevularAdmin(admin.ModelAdmin):
-    list_display = ('name_surname', 'phone', 'date', 'hour', 'note', 'onay_durumu', 'personel')
+    list_display = ('name_surname', 'phone', 'date', 'hour','islem', 'note', 'onay_durumu', 'personel')
     list_filter = (('date', DateRangeFilter), 'personel')
     ordering = ('date', 'personel', 'hour')
     actions = [onay_durumu_degistir]
