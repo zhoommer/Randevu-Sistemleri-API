@@ -6,3 +6,6 @@ __pycache__/
 
 #
 settings.py
+backend/backend/settings.py
+backend/api/__pycache__/admin.cpython-312.pyc
+/backend/api/__pycache__
